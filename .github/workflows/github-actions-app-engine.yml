@@ -1,5 +1,7 @@
 name: GitHub Actions App Engine
 run-name: ${{ github.actor }} is testing out GitHub Actions App Engine 🚀
+inputs:
+  working_directory: example-app
 on: [push]
 jobs:
   job_id:
