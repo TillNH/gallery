@@ -3,7 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions App Engine 🚀
 on: [push]
 inputs:
   working_directory:
-    defaults: 'example-app'
+    description: 'Which directory to use'
+    default: 'example-app'
 jobs:
   job_id:
     runs-on: ubuntu-latest
