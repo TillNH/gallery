@@ -1,5 +1,5 @@
 name: GitHub Actions App Engine
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is testing out GitHub Actions App Engine 🚀
 on: [push]
 jobs:
   job_id:
@@ -9,6 +9,7 @@ jobs:
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: '${{ secrets.GCP_SA_KEY }}'
+        working_directory: 'example-app'
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-appengine@v0'
