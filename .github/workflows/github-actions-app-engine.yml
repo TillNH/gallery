@@ -9,7 +9,7 @@ jobs:
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: '${{ secrets.GCP_SA_KEY }}'
-        deliverables: 'example-app/app.yaml'
+        working_directory: 'example-app'
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-appengine@v0'
