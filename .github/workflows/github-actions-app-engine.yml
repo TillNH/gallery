@@ -1,9 +1,9 @@
 name: GitHub Actions App Engine
 run-name: ${{ github.actor }} is testing out GitHub Actions App Engine 🚀
+on: [push]
 inputs:
   working_directory:
     defaults: 'example-app'
-on: [push]
 jobs:
   job_id:
     runs-on: ubuntu-latest
