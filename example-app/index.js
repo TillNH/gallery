@@ -22,7 +22,7 @@ const {Storage} = require('@google-cloud/storage');
 const storage = new Storage();
 
 function getFilename(){
-  const [files] = storage.bucket(bucketName).getFiles();
+  const [files] = storage.bucket("gallery_testbucket").getFiles();
 
   return files
 }
