@@ -15,11 +15,24 @@
 const express = require('express');
 const app = express();
 
+// Imports the Google Cloud client library
+const {Storage} = require('@google-cloud/storage');
+
+// Creates a client using Application Default Credentials
+const storage = new Storage();
+
+function getFilename(){
+  const [files] = await storage.bucket(bucketName).getFiles();
+
+  return files
+}
+
 app.get('/', (req, res) => {
   console.log('Hello world received a request.');
 
-  const target = process.env.TARGET || 'World2';
-  res.send(`Hello ${target}!`);
+  const target = process.env.TARGET || 'World';
+  const filenamesBucket = getFilename();
+  res.send(`Hello ${target}! ${filenamesBucket}`);
 });
 
 const port = process.env.PORT || 8080;
