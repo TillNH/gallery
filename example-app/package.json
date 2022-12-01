@@ -9,6 +9,7 @@
   "author": "Google LLC",
   "license": "Apache-2.0",
   "dependencies": {
+    "@google-cloud/storage": "^6.7.0",
     "express": "^4.17.1"
   }
 }
